@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="glutcallbacks.cpp" />
     <ClCompile Include="hellogl.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
