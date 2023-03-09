@@ -43,6 +43,8 @@ public:
 
 	void Display();
 	void DrawPolygon();
+	void DrawCube();
+	void keybord(unsigned char key, int x, int y);
 
 	void Update();
 

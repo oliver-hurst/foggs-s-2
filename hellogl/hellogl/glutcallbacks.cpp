@@ -18,6 +18,10 @@ namespace  GLUTCallbacks {
 			helloGL->Display();
 		}
 	}
+	void keybord(unsigned char key, int x, int y)
+	{
+		helloGL->keybord(key, x, y);
+	}
 	void Timer(int preferredRefresh)
 	{
 		helloGL->Update();

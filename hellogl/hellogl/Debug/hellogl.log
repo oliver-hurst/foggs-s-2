@@ -1,3 +1,2 @@
 ﻿  hellogl.cpp
-C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(27,8): warning C4091: '': ignored on left of 'Camera' when no variable is declared
   hellogl.vcxproj -> C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\Debug\hellogl.exe
