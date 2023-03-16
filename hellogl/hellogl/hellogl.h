@@ -25,6 +25,15 @@ struct Camera
 
 };
 
+struct Color 
+{
+	GLfloat r, g, b;
+};
+
+struct Vertex 
+{
+	GLfloat x, y, z;
+};
 
 
 
@@ -45,12 +54,20 @@ public:
 	void DrawPolygon();
 	void DrawCube();
 	void keybord(unsigned char key, int x, int y);
+	void DrawIndexedCube();
 
 	void Update();
+	void DrawCubeArray();
+
 
 
 private:
 	float rotation;
+	static Vertex vertices[];
+	static Color colors[];
+	static Vertex indexedVertices[];
+	static Color indexedColors[];
+	static GLushort indices[];
 	Camera* camera;
 };
 
