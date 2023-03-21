@@ -127,10 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cube.h" />
     <ClInclude Include="glutcallbacks.h" />
     <ClInclude Include="hellogl.h" />
+    <ClInclude Include="structures.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cube.cpp" />
     <ClCompile Include="glutcallbacks.cpp" />
     <ClCompile Include="hellogl.cpp" />
     <ClCompile Include="main.cpp" />

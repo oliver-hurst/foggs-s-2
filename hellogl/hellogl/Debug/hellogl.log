@@ -1,6 +1,2 @@
-﻿  glutcallbacks.cpp
-  hellogl.cpp
-  main.cpp
-  Generating Code...
-  LINK : C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\Debug\hellogl.exe not found or not built by the last incremental link; performing full link
+﻿  hellogl.cpp
   hellogl.vcxproj -> C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\Debug\hellogl.exe

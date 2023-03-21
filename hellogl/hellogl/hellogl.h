@@ -4,39 +4,9 @@
 #include<gl/GLU.h>// open gl utilities
 #include"GL\freeglut.h" // freegult libery
 #include "glutcallbacks.h"
+#include "structures.h"
+#include "Cube.h"
 #define REFRESHRATE 16
-
-struct Vector3
-{
-	float x;
-	float y;
-	float z;
-
-
-};
-
-
-
-struct Camera
-{
-	Vector3 eye;
-	Vector3 centre;
-	Vector3 up;
-
-};
-
-struct Color 
-{
-	GLfloat r, g, b;
-};
-
-struct Vertex 
-{
-	GLfloat x, y, z;
-};
-
-
-
 
 
 class HelloGL
@@ -51,23 +21,18 @@ public:
 	~HelloGL(void);
 
 	void Display();
-	void DrawPolygon();
-	void DrawCube();
 	void keybord(unsigned char key, int x, int y);
-	void DrawIndexedCube();
+
 
 	void Update();
-	void DrawCubeArray();
 
 
 
 private:
 	float rotation;
 	static Vertex vertices[];
-	static Color colors[];
-	static Vertex indexedVertices[];
-	static Color indexedColors[];
-	static GLushort indices[];
+	
 	Camera* camera;
+	Cube* cube;
 };
 

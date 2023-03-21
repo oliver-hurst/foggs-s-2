@@ -1,10 +1,15 @@
-﻿  glutcallbacks.cpp
-  hellogl.cpp
-  Generating Code...
+﻿  hellogl.cpp
 hellogl.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
 hellogl.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+hellogl.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "public: void __cdecl HelloGL::Update(void)" (?Update@HelloGL@@QEAAXXZ)
+hellogl.obj : error LNK2019: unresolved external symbol __imp_glutTimerFunc referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+hellogl.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardFunc referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
 hellogl.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
 hellogl.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
 hellogl.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+hellogl.obj : error LNK2019: unresolved external symbol "void __cdecl GLUTCallbacks::keybord(unsigned char,int,int)" (?keybord@GLUTCallbacks@@YAXEHH@Z) referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+hellogl.obj : error LNK2019: unresolved external symbol "void __cdecl GLUTCallbacks::Timer(int)" (?Timer@GLUTCallbacks@@YAXH@Z) referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+hellogl.obj : error LNK2001: unresolved external symbol "private: static struct Vertex * HelloGL::vertices" (?vertices@HelloGL@@0PAUVertex@@A)
+hellogl.obj : error LNK2001: unresolved external symbol "private: static struct Color * HelloGL::colors" (?colors@HelloGL@@0PAUColor@@A)
 freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\x64\Debug\hellogl.exe : fatal error LNK1120: 5 unresolved externals
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\x64\Debug\hellogl.exe : fatal error LNK1120: 12 unresolved externals
