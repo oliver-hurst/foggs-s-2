@@ -11,16 +11,18 @@
 
 HelloGL::HelloGL(int argc, char* argv[])
 {
-	rotation = 0.0f;
 	camera = new Camera();
-	camera->eye.x = 0.0f, camera->eye.y = 0.0f, camera->eye.z = 1.0f;
+	camera->eye.x = 5.0f, camera->eye.y = 5.0f, camera->eye.z = -35.0f;
 	camera->centre.x = 0.0f, camera->centre.y = 0.0f, camera->centre.z = 0.0f;
 	camera->up.x = 0.0f, camera->up.y = 1.0f, camera->up.z = 0.0f;
-
-	cube = new Cube();
-	//cube->Draw();
+	for (int i = 0; i < 200; i++) 
+	{
+		cube[i] = new Cube(((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000 / 10.0f));
+	}
+	
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);	
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
 	glutInitWindowSize(800, 800);
 	glutCreateWindow("simple OpenGL proggram");	
 	glutDisplayFunc(GLUTCallbacks::Display);
@@ -28,11 +30,12 @@ HelloGL::HelloGL(int argc, char* argv[])
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, 800, 800);
-	gluPerspective(45, 1, 0, 1000);
+	gluPerspective(45, 1, 0.1, 1000);
 	glMatrixMode(GL_MODELVIEW);
 	glutKeyboardFunc(GLUTCallbacks::keybord);
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
+	glEnable(GL_DEPTH_TEST);
 	glutMainLoop();
 }
 
@@ -43,15 +46,15 @@ HelloGL::~HelloGL(void)
 
 void HelloGL::Display()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glPushMatrix();
-	glTranslatef(0.0f, 0.0f, -5.0f);
-	glRotatef(rotation, 1.0f, 1.0f, 1.0f);
-	cube->DrawIndexedCube();
-	glEnd();
-	glPopMatrix();
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	for (int i = 0; i < 200; i++)
+	{
+		cube[i]->Draw();
+	}
 
 	glFlush();
+	glutSwapBuffers();
 }
 
 
@@ -110,10 +113,10 @@ void HelloGL:: Update()
 {
 	glLoadIdentity();
 	gluLookAt(camera->eye.x, camera->eye.y, camera->eye.z, camera->centre.x, camera->centre.y, camera->centre.z, camera->up.x, camera->up.y, camera->up.z);
-	rotation += 0.5f;
-	cube->Update();
-	if (rotation >= 360.0f)
-		rotation = 0.0f;
+	for (int i = 0; i < 200; i++)
+	{
+		cube[i]->Update();
+	}
 	glutPostRedisplay();
 
 }

@@ -18,28 +18,34 @@ GLushort Cube::indices[] = { 0, 1, 2,  2, 3, 0,      // front
 4, 7, 6,  6, 5, 4 };    // back
 
 
-Cube::Cube()
+Cube::Cube(float x, float y, float z)
 {
 	_rotation = 0;
+
+	_position.x = x;
+	_position.y = y;
+	_position.z = z; 
 }
 
 Cube::~Cube()
 {
 	
 }
-void Cube::DrawIndexedCube()
+void Cube::Draw()
 {
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_COLOR_ARRAY);
+	glVertexPointer(3, GL_FLOAT, 0, indexedVertices);
+	glColorPointer(3, GL_FLOAT, 0, indexedColors);
+
 	glPushMatrix();
-	glBegin(GL_TRIANGLES);
-	for (int i = 0; i < 36; i++) 
-	{
-		glColor3fv(&indexedColors[indices[i]].r);
-		glVertex3fv(&indexedVertices[indices[i]].x);
-	}
-	glEnd();
+	glRotatef(_rotation, 1.0f, 0.0f, 0.0f);
+	glTranslatef(_position.x, _position.y, _position.z);
+		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_SHORT, indices);
 	glPopMatrix();
 
-
+	glDisableClientState(GL_COLOR_ARRAY);
+	glDisableClientState(GL_VERTEX_ARRAY);
 }
 
 
@@ -52,5 +58,5 @@ void Cube::DrawIndexedCube()
 
 void Cube::Update()
 {
-	_rotation += 0;
+	_rotation += 0.2;
 }

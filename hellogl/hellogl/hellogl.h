@@ -29,10 +29,9 @@ public:
 
 
 private:
-	float rotation;
 	static Vertex vertices[];
 	
 	Camera* camera;
-	Cube* cube;
+	Cube* cube[200];
 };
 

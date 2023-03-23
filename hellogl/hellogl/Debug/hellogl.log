@@ -1,2 +1,3 @@
-﻿  hellogl.cpp
+﻿  cube.cpp
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\cube.cpp(61,18): warning C4305: '+=': truncation from 'double' to 'GLfloat'
   hellogl.vcxproj -> C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\Debug\hellogl.exe

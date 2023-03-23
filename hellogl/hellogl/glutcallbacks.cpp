@@ -5,6 +5,7 @@ namespace  GLUTCallbacks {
 	namespace 
 	{
 		HelloGL* helloGL = nullptr;
+		//glEnable(GL_DEPTH_TEST); 
 	}
 
 	void Init(HelloGL* gl)
@@ -15,6 +16,7 @@ namespace  GLUTCallbacks {
 	{
 		if (helloGL != nullptr)
 		{
+			//glutInitDisplayMode(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			helloGL->Display();
 		}
 	}
