@@ -1,23 +1,57 @@
 #include "cube.h"
+using namespace std;
+#include <iostream>
+#include <fstream>
 
 
+Vertex* indexedVertices = nullptr;
 
-Vertex Cube::indexedVertices[] = { 1, 1, 1,  -1, 1, 1,  // v0,v1,
--1,-1, 1,   1,-1, 1,   // v2,v3
-1,-1,-1,   1, 1,-1,    // v4,v5
--1, 1,-1,   -1,-1,-1 };// v6,v7
-Color Cube::indexedColors[] = { 1, 1, 1,   1, 1, 0,   // v0,v1,
-1, 0, 0,   1, 0, 1,   // v2,v3
-0, 0, 1,   0, 1, 1,   // v4,v5
-0, 1, 0,   0, 0, 0 }; //v6,v7
-GLushort Cube::indices[] = { 0, 1, 2,  2, 3, 0,      // front
-0, 3, 4,  4, 5, 0,      // right
-0, 5, 6,  6, 1, 0,      // top
-1, 6, 7,  7, 2, 1,      // left
-7, 4, 3,  3, 2, 7,      // bottom
-4, 7, 6,  6, 5, 4 };    // back
+Color* indexedColors = nullptr;
+
+GLushort* indices = nullptr;
 
 
+int Cube::numvertices = 0;
+int Cube::numindices = 0;
+int Cube::numcolors = 0;
+
+
+bool Cube::Load(char*  path)
+{
+	std::ifstream inFile;
+	inFile.open(path);
+	if (!inFile.good())
+	{
+		std::cerr << "cant open the file" << path << std::endl;
+		return false;
+	}
+	inFile >> numvertices;
+	indexedVertices = new Vertex[numvertices];
+	for (int i = 0; i < numvertices; i++)
+	{
+		inFile >> indexedVertices[i].x;
+		inFile >> indexedVertices[i].y;
+		inFile >> indexedVertices[i].z;
+	}
+	inFile >> numcolors;
+	indexedColors = new Color[numcolors];
+	for (int i = 0; i < numcolors; i++)
+	{
+		inFile >> indexedColors[i].r;
+		inFile >> indexedColors[i].g;
+		inFile >> indexedColors[i].b;
+	}
+	inFile >> numindices;
+	indices = new GLushort[numindices];
+	for (int i = 0; i < numindices; i++)
+	{
+		inFile >> indices[i];
+		
+	}
+	inFile.close();
+	return true;
+
+}
 Cube::Cube(float x, float y, float z)
 {
 	_rotation = 0;
@@ -49,12 +83,6 @@ void Cube::Draw()
 }
 
 
-//
-//void Cube::Draw()
-//{
-//	glRotatef(_rotation, 1.0f, 0.0f, 0.0f);
-//
-//}
 
 void Cube::Update()
 {

@@ -1,3 +1,7 @@
 ﻿  cube.cpp
-C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\cube.cpp(61,18): warning C4305: '+=': truncation from 'double' to 'GLfloat'
-  hellogl.vcxproj -> C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\Debug\hellogl.exe
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\cube.cpp(89,18): warning C4305: '+=': truncation from 'double' to 'GLfloat'
+  hellogl.cpp
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(18,30): error C2248: 'Cube::Load': cannot access private member declared in class 'Cube'
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\Cube.h(17): message : see declaration of 'Cube::Load'
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\Cube.h(8): message : see declaration of 'Cube'
+  Generating Code...
