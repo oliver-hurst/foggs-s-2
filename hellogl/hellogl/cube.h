@@ -8,20 +8,19 @@
 class Cube
 {
 private:
-//	Vertex* indexedVertices;
-//	Color* indexedColors ;
-//	GLushort* indices;
+	Mesh* _mesh;
 	GLfloat _rotation;
 	Vector3 _position;
 	static int numvertices, numcolors, numindices;
-	static bool Load(char* path);
+;
 	
 
 public:
 	
-	Cube(float x, float y, float z);
+	Cube(Mesh* mesh, float x, float y, float z);
 	~Cube();
 	void Draw();
+	static bool Load(char* path);
 
 	//void Draw();
 	void Update();

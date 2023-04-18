@@ -18,7 +18,7 @@ int Cube::numcolors = 0;
 
 bool Cube::Load(char*  path)
 {
-	std::ifstream inFile;
+	/*std::ifstream inFile;
 	inFile.open(path);
 	if (!inFile.good())
 	{
@@ -49,10 +49,10 @@ bool Cube::Load(char*  path)
 		
 	}
 	inFile.close();
-	return true;
+	return true;*/
 
 }
-Cube::Cube(float x, float y, float z)
+Cube::Cube(Mesh* mesh, float x, float y, float z)
 {
 	_rotation = 0;
 
@@ -73,8 +73,9 @@ void Cube::Draw()
 	glColorPointer(3, GL_FLOAT, 0, indexedColors);
 
 	glPushMatrix();
-	glRotatef(_rotation, 1.0f, 0.0f, 0.0f);
 	glTranslatef(_position.x, _position.y, _position.z);
+	glRotatef(_rotation, 1.0f, 1.0f, 1.0f);
+	
 		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_SHORT, indices);
 	glPopMatrix();
 
@@ -86,5 +87,5 @@ void Cube::Draw()
 
 void Cube::Update()
 {
-	_rotation += 0.2;
+	_rotation += 1.0f;
 }

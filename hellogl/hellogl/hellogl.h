@@ -6,6 +6,7 @@
 #include "glutcallbacks.h"
 #include "structures.h"
 #include "Cube.h"
+#include "MeshLoader.h"
 #define REFRESHRATE 16
 
 
@@ -16,6 +17,8 @@ class HelloGL
 public:
 	//constructer deffinition
 	HelloGL(int argc, char* argv[]);
+	void InitObjects();
+	void InitGL(int argc, char* argv[]);
 
 	//destructer
 	~HelloGL(void);

@@ -32,3 +32,10 @@ struct Vertex
 {
 	GLfloat x, y, z;
 };
+
+struct Mesh 
+{
+	Vertex* verticies;
+	Color* Colors;
+	int VertexCount, ColorCount, IndexCount;
+};
