@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 namespace MeshLoader
 {
 	void LoadVertices(ifstream& inFile, Mesh& mesh);
@@ -17,25 +18,43 @@ namespace MeshLoader
 
 		if (mesh.VertexCount > 0)
 		{
-			mesh.Vertices = new Vertex[mesh.VertexCount];
+			mesh.vertices = new Vertex[mesh.VertexCount];
 
 			for (int i = 0; i < mesh.VertexCount; i++)
 			{
-				inFile >> mesh.Vertices[i].x;
-				inFile >> mesh.Vertices[i].y;
-				inFile >> mesh.Vertices[i].z;
+				inFile >> mesh.vertices[i].x;
+				inFile >> mesh.vertices[i].y;
+				inFile >> mesh.vertices[i].z;
 			}
 		}
 	}
 
 	void LoadColours(ifstream& inFile, Mesh& mesh)
 	{
-		//TODO: LOAD COLOURS
+		inFile >> mesh.ColorCount;
+
+		if (mesh.ColorCount > 0)
+		{
+			mesh.Colors = new Color[mesh.ColorCount];
+
+			for (int i = 0; i < mesh.ColorCount; i++)
+			{
+				inFile >> mesh.Colors[i].r;
+				inFile >> mesh.Colors[i].g;
+				inFile >> mesh.Colors[i].b;
+			}
+		}
 	}
 
 	void LoadIndices(ifstream& inFile, Mesh& mesh)
 	{
-		//TODO: Load Indices
+		inFile >> mesh.IndexCount;
+		mesh.Indices = new GLushort[mesh.IndexCount];
+		for (int i = 0; i < mesh.IndexCount; i++)
+		{
+			inFile >> mesh.Indices[i];
+
+		}
 	}
 
 	Mesh* MeshLoader::Load(char* path)
@@ -52,39 +71,12 @@ namespace MeshLoader
 			return nullptr;
 		}
 
-		//LOAD DATA USING METHODS ABOVE
-
-		std::ifstream inFile;
-	inFile.open(path);
-	if (!inFile.good())
-	{
-		std::cerr << "cant open the file" << path << std::endl;
-		return false;
-	}
-	inFile >> numvertices;
-	indexedVertices = new Vertex[numvertices];
-	for (int i = 0; i < numvertices; i++)
-	{
-		inFile >> indexedVertices[i].x;
-		inFile >> indexedVertices[i].y;
-		inFile >> indexedVertices[i].z;
-	}
-	inFile >> numcolors;
-	indexedColors = new Color[numcolors];
-	for (int i = 0; i < numcolors; i++)
-	{
-		inFile >> indexedColors[i].r;
-		inFile >> indexedColors[i].g;
-		inFile >> indexedColors[i].b;
-	}
-	inFile >> numindices;
-	indices = new GLushort[numindices];
-	for (int i = 0; i < numindices; i++)
-	{
-		inFile >> indices[i];
-
-	}
+		
+	LoadVertices(inFile, *mesh);
+	LoadColours(inFile, *mesh);
+	LoadIndices(inFile, *mesh);
+	
 	inFile.close();
-		return mesh;
+	return mesh;
 	}
 }

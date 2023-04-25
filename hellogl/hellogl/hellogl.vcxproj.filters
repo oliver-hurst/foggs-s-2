@@ -18,13 +18,22 @@
     <ClInclude Include="hellogl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="glutcallbacks.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneobject.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="structures.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cube.h">
+    <ClInclude Include="glutcallbacks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pyramid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -39,6 +48,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneobject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pyramid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

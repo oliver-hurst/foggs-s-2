@@ -1,12 +1,11 @@
 #pragma once
-#include<windows.h>// required for opengl on windows
-#include<gl/GL.h>//open gl
-#include<gl/GLU.h>// open gl utilities
-#include"GL\freeglut.h" // freegult libery
 #include "glutcallbacks.h"
-#include "structures.h"
+//#include "structures.h"
+#include "sceneobject.h"
 #include "Cube.h"
-#include "MeshLoader.h"
+#include "pyramid.h"
+
+//#include "MeshLoader.h"
 #define REFRESHRATE 16
 
 
@@ -35,6 +34,7 @@ private:
 	static Vertex vertices[];
 	
 	Camera* camera;
-	Cube* cube[200];
+	sceneobject* objects[1000];
+	
 };
 

@@ -130,6 +130,9 @@
     <ClInclude Include="cube.h" />
     <ClInclude Include="glutcallbacks.h" />
     <ClInclude Include="hellogl.h" />
+    <ClInclude Include="MeshLoader.h" />
+    <ClInclude Include="pyramid.h" />
+    <ClInclude Include="sceneobject.h" />
     <ClInclude Include="structures.h" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +140,9 @@
     <ClCompile Include="glutcallbacks.cpp" />
     <ClCompile Include="hellogl.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MeshLoader.cpp" />
+    <ClCompile Include="pyramid.cpp" />
+    <ClCompile Include="sceneobject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

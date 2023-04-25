@@ -1,4 +1,8 @@
 #pragma once
+#include<windows.h>// required for opengl on windows
+#include<gl/GL.h>//open gl
+#include<gl/GLU.h>// open gl utilities
+#include"GL\freeglut.h" // freegult libery
 
 
 
@@ -35,7 +39,8 @@ struct Vertex
 
 struct Mesh 
 {
-	Vertex* verticies;
+	Vertex* vertices;
 	Color* Colors;
+	GLushort* Indices;
 	int VertexCount, ColorCount, IndexCount;
 };

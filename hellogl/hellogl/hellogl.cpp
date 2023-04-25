@@ -1,10 +1,11 @@
 #include "hellogl.h"
+#include "MeshLoader.h"
 
 
 
 HelloGL::HelloGL(int argc, char* argv[])
 {
-	InitGL(int argc, char* argv[]);
+	InitGL(argc, argv);
 	InitObjects();
 
 	
@@ -17,11 +18,20 @@ void HelloGL::InitObjects()
 	camera->eye.x = 5.0f, camera->eye.y = 5.0f, camera->eye.z = -35.0f;
 	camera->centre.x = 0.0f, camera->centre.y = 0.0f, camera->centre.z = 0.0f;
 	camera->up.x = 0.0f, camera->up.y = 1.0f, camera->up.z = 0.0f;
-	Mesh*cubeMesh = MeshLoader::Load("cube.txt");
-	for (int i = 0; i < 200; i++)
+	Mesh* cubeMesh = MeshLoader::Load((char*)"cube.txt");
+	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+
+	for (int i = 0; i < 0; i++)
 	{
-		cube[i] = new Cube(cubeMesh,((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000 / 10.0f));
+		objects[i] = new Cube(cubeMesh,((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000 / 10.0f));
 	}
+
+	for (int i = 0; i < 1000; i++)
+	{
+		objects[i] = new pyramid(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000 / 10.0f));
+	}
+
+	
 }
 
 void HelloGL::InitGL(int argc, char* argv[])
@@ -29,13 +39,15 @@ void HelloGL::InitGL(int argc, char* argv[])
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
+	glutInitWindowSize(800, 800);
+	glutInitWindowPosition(100, 100);
 	glutCreateWindow("simple OpenGL proggram");
 	glutDisplayFunc(GLUTCallbacks::Display);
 	glutTimerFunc(REFRESHRATE, GLUTCallbacks::Timer, REFRESHRATE);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, 800, 800);
-	gluPerspective(45, 1, 0.1, 1000);
+	gluPerspective(45, 1, 1, 1000);
 	glMatrixMode(GL_MODELVIEW);
 	glutKeyboardFunc(GLUTCallbacks::keybord);
 	glEnable(GL_CULL_FACE);
@@ -52,9 +64,9 @@ void HelloGL::Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	for (int i = 0; i < 200; i++)
+	for (int i = 0; i < 1000; i++)
 	{
-		cube[i]->Draw();
+		objects[i]->draw();
 	}
 
 	glFlush();
@@ -119,7 +131,7 @@ void HelloGL:: Update()
 	gluLookAt(camera->eye.x, camera->eye.y, camera->eye.z, camera->centre.x, camera->centre.y, camera->centre.z, camera->up.x, camera->up.y, camera->up.z);
 	for (int i = 0; i < 200; i++)
 	{
-		cube[i]->Update();
+		objects[i]->update();
 	}
 	glutPostRedisplay();
 
