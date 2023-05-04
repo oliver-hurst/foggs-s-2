@@ -134,6 +134,7 @@
     <ClInclude Include="pyramid.h" />
     <ClInclude Include="sceneobject.h" />
     <ClInclude Include="structures.h" />
+    <ClInclude Include="texture2d.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cube.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="MeshLoader.cpp" />
     <ClCompile Include="pyramid.cpp" />
     <ClCompile Include="sceneobject.cpp" />
+    <ClCompile Include="texture2d.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
