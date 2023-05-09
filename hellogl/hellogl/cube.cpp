@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-Cube::Cube(Mesh* mesh, float x, float y, float z) : sceneobject(mesh)
+Cube::Cube(Mesh* mesh, texture2d* texture,  float x, float y, float z) : sceneobject(mesh,texture)
 {
 	
 	_rotation = 0;
@@ -23,8 +23,11 @@ Cube::~Cube()
 }
 void Cube::draw()
 {
+	glBindTexture(GL_TEXTURE_2D, _texture->GetID());
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_COLOR_ARRAY);
+	glTexCoordPointer(2, GL_FLOAT, 0, _mesh->TexCoords);
 	glVertexPointer(3, GL_FLOAT, 0, _mesh->vertices);
 	glColorPointer(3, GL_FLOAT, 0, _mesh->Colors);
 
@@ -37,6 +40,7 @@ void Cube::draw()
 
 	glDisableClientState(GL_COLOR_ARRAY);
 	glDisableClientState(GL_VERTEX_ARRAY);
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY); 
 }
 
 

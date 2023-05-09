@@ -1,6 +1,7 @@
 #pragma once
 
 #include "sceneobject.h"
+#include "texture2d.h"
 
 class Cube : public sceneobject
 {
@@ -14,7 +15,7 @@ private:
 
 public:
 	
-	Cube(Mesh* mesh, float x, float y, float z);
+	Cube(Mesh* mesh, texture2d* texture, float x, float y, float z);
 	~Cube();
 	void draw();
 	

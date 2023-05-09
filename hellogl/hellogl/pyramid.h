@@ -1,5 +1,7 @@
 #pragma once
 #include "sceneobject.h"
+#include "texture2d.h"
+
 class pyramid : public sceneobject
 {
 private:
@@ -8,7 +10,7 @@ private:
 	Vector3 _position;
 
 public:
-	pyramid(Mesh* mesh, float x, float y, float z);
+	pyramid(Mesh* mesh, texture2d* texture, float x, float y, float z);
 	~pyramid();
 	void draw();
 	//static bool Load(char* path);

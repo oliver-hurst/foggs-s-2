@@ -37,10 +37,32 @@ struct Vertex
 	GLfloat x, y, z;
 };
 
+struct TexCoords
+{
+	GLfloat u, v;
+};
+
 struct Mesh 
 {
+	TexCoords* TexCoords;
 	Vertex* vertices;
-	Color* Colors;
+	 Color* Colors;
 	GLushort* Indices;
-	int VertexCount, ColorCount, IndexCount;
+	int VertexCount, ColorCount, IndexCount, TexCoordsCount;
+	Vector3* normals;
+};
+
+struct Vector4
+{
+	float x, y, z, w;
+};
+
+struct lighting
+{
+	Vector4 Ambient, Diffuse, specular;
+};
+struct material
+{
+	Vector4 Ambient, Diffuse, specular;
+	GLfloat shinineness;
 };

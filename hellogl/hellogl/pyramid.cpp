@@ -1,6 +1,6 @@
 #include "pyramid.h"
 
-pyramid::pyramid(Mesh* mesh, float x, float y, float z) : sceneobject(mesh)
+pyramid::pyramid(Mesh* mesh, texture2d* texture, float x, float y, float z) : sceneobject(mesh, nullptr)
 {
 	_rotation = 0;
 
