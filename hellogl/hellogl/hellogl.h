@@ -1,6 +1,6 @@
 #pragma once
 #include "glutcallbacks.h"
-//#include "structures.h"
+
 #include "sceneobject.h"
 #include "Cube.h"
 #include "pyramid.h"

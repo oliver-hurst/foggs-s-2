@@ -49,4 +49,6 @@ void Cube::draw()
 void Cube::update()
 {
 	_rotation += 1.0f;
+	
+	
 }

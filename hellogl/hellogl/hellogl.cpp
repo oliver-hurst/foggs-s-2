@@ -1,5 +1,6 @@
 #include "hellogl.h"
 #include "MeshLoader.h"
+#include "cube.h"
 
 
 
@@ -152,6 +153,10 @@ void HelloGL::keybord(unsigned char key, int x, int y)
 		camera->eye.z += 1.0f;
 		camera->centre.z += 1.0f;
 	}
+
+	
+
+	
 
 
 		

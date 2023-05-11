@@ -1,11 +1,15 @@
-﻿  hellogl.cpp
-C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(48,29): warning C4305: '=': truncation from 'double' to 'float'
+﻿  cube.cpp
+  glutcallbacks.cpp
+  hellogl.cpp
 C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(49,29): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(50,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(52,29): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(51,29): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(53,29): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(54,29): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(56,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(55,29): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(57,30): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(58,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\hellogl\hellogl.cpp(59,30): warning C4305: '=': truncation from 'double' to 'float'
+  main.cpp
+  Generating Code...
   hellogl.vcxproj -> C:\Users\h021185l\Documents\GitHub\foggs-s-2\hellogl\Debug\hellogl.exe
