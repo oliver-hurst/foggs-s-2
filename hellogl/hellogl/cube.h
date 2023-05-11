@@ -9,7 +9,7 @@ private:
 	
 	GLfloat _rotation;
 	Vector3 _position;
-	static int numvertices, numcolors, numindices;
+	static int numvertices, numNormal, numindices;
 ;
 	
 

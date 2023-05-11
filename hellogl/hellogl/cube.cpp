@@ -26,10 +26,11 @@ void Cube::draw()
 	glBindTexture(GL_TEXTURE_2D, _texture->GetID());
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glEnableClientState(GL_VERTEX_ARRAY);
-	glEnableClientState(GL_COLOR_ARRAY);
+	//glEnableClientState(GL_COLOR_ARRAY);
+	glEnable(GL_NORMAL_ARRAY);
 	glTexCoordPointer(2, GL_FLOAT, 0, _mesh->TexCoords);
 	glVertexPointer(3, GL_FLOAT, 0, _mesh->vertices);
-	glColorPointer(3, GL_FLOAT, 0, _mesh->Colors);
+	glNormalPointer( GL_FLOAT, 0, _mesh->Normals);
 
 	glPushMatrix();
 	glTranslatef(_position.x, _position.y, _position.z);

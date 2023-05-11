@@ -17,6 +17,7 @@ public:
 	//constructer deffinition
 	HelloGL(int argc, char* argv[]);
 	void InitObjects();
+	void InitLighting();
 	void InitGL(int argc, char* argv[]);
 
 	//destructer
@@ -33,6 +34,8 @@ public:
 private:
 	static Vertex vertices[];
 	
+	Vector4* _lightposition;
+	Lighting* _lightData;
 	Camera* camera;
 	sceneobject* objects[1000];
 	

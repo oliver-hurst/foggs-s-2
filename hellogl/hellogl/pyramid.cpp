@@ -19,7 +19,7 @@ void pyramid::draw()
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_COLOR_ARRAY);
 	glVertexPointer(3, GL_FLOAT, 0, _mesh->vertices);
-	glColorPointer(3, GL_FLOAT, 0, _mesh->Colors);
+	//glColorPointer(3, GL_FLOAT, 0, _mesh->Colors);
 
 	glPushMatrix();
 	glTranslatef(_position.x, _position.y, _position.z);
